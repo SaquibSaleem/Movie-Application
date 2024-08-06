@@ -26,7 +26,7 @@ const HitApi = async (endpoint, method, data = null) => {
     const headers = {
         "Content-Type": "application/json",
     };
-    const options = {
+     const options = {
         method: method,
         headers,
         body: data ? JSON.stringify(data) : null,
@@ -38,4 +38,6 @@ const HitApi = async (endpoint, method, data = null) => {
         return { code: response.status, message: response.statusText };
     }
 };
+
+
 export default HitApi
