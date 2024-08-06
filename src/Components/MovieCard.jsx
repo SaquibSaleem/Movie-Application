@@ -23,6 +23,7 @@ const CardUtils = ({ setOpenModal, openModal }) => {
           onClick={() => setFavourite(!favourite)}
           style={{ display: favourite ? "block" : "none" }}
           className="text-red-500 text-[40px] cursor-pointer"
+          
         />
 
         <FaRegEye
