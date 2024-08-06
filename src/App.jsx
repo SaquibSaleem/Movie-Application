@@ -11,7 +11,6 @@ import Layout from "./Layout";
 import LoginPage from "./Pages/LoginPage";
 import SignUp from "./Pages/SignUp";
 import PrivateRoute from "./Utils/PrivateRoute";
-
 function App() {
   const { loading } = useContext(loadingContext);
   const token = localStorage.getItem("token");
@@ -47,7 +46,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<SignUp />} />
-
+            
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Layout />} />
             </Route>
