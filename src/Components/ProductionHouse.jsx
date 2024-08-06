@@ -30,11 +30,11 @@ const ProductionHouse = () => {
   ];
 
   return (
-    <div className="flex  flex-wrap  gap-2 md:gap-5 flex-nowrap p-2 px-5 md:px-16 mt-2">
+    <div className="flex  flex-wrap  gap-4 md:gap-5 flex-nowrap p-2 px-5 md:px-16 mt-2">
       {productionList.map((item) => (
         <div
           key={item.id}
-          className="border-[2px] border-gray-600 rounded-lg hover:scale-110 transition-all
+          className="border-[2px] border-gray-600 rounded-lg hover:scale-100 transition-all
          duration-300 ease-in-out  relative shadow-xl  shadow-gray-800 "
         >
           <img src={item.image} alt="production" className="w-full z-[1]" />

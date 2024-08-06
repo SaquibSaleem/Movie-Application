@@ -9,16 +9,6 @@ const SliderComp = () => {
   const screenWidth = window.innerWidth;
   const { trendingList } = useContext(LoadingContext);
 
-  // const getTrendingMovies = async () => {
-  //   try {
-  //     const data = await FireApi();
-  //     console.log(data.results, "data");
-  //     setMovieList(data.results || []);
-  //   } catch (err) {
-  //     console.log(err.message || "An error occurred");
-  //   }
-  // };
-
   const sliderRight = (element) => {
     element.scrollLeft += screenWidth - 110;
   };
