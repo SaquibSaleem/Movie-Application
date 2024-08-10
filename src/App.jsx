@@ -1,28 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
-import Header from './Componets/Header'
-import Slider from './Componets/Slider'
-import ProductionHouse from './Componets/ProductionHouse'
-import GenreMovieList from './Componets/GenreMovieList'
+import Header from './Components/Header/Header'
+import { Home } from './Components/Home/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-
-function App() {
-  const [count, setCount] = useState(0)
-
+export const App = () => {
   return (
-    <div className="">
+    <>
+      <Router>
         <Header/>
-        
-        <Slider/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* Uncomment these routes as needed */}
+          {/* <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+        {/* <Footer /> */}
+      </Router>
+    </>
+  );
+};
 
-        <ProductionHouse/>
-
-        <GenreMovieList/>
-    </div>
-  )
-}
-
-export default App
+export default App;
