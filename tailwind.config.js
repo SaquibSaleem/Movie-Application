@@ -2,16 +2,12 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        customColor: '#14143c',
-      },
-    },
+    extend: {},
   },
   plugins: [
-    require('tailwind-scrollbar-hide')
+    require('tailwindcss-no-scrollbar')
   ],
 }
