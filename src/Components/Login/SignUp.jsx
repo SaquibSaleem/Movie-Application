@@ -1,45 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HitApi from "../../Api/UseAuthRequest";
 
-const Login = () => {
-    const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const SignUp = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const formData = {
+      username: data.get("name"),
       email: data.get("email"),
       password: data.get("password"),
     };
-    console.log(formData, "formaData");
-    if (formData.email && formData.password) {
+    if (formData.username && formData.password && formData.email) {
       try {
-        const response = await HitApi("login", "POST", formData);
-        if (response.status === true) {
-          localStorage.setItem("token", response.data.token);
-          navigate("/");
-        }
+        console.log(formData, "formData");
+        const response = await HitApi("signup", "POST", formData);
+        response.status === true ? navigate("/login") : null;
+        console.log(response, "hehehehehe");
       } catch (error) {
-        alert("incorrect email or password");
         console.log(error);
       }
     } else {
-      alert("fill all fields");
+      console.log("fill all fields");
     }
-};
-return (
+  };
+
+  return (
     <div className="min-h-screen bg-[#131520]  flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="text-center text-3xl font-extrabold text-white">
-          Sign in to your account
+          Register your account
         </h2>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="md:bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-white  md:text-gray-700"
+              >
+                User Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  name="name"
+                  type="name"
+                  autoComplete="name"
+                  required
+                  //value={name}
+                  //onChange={(e) => setName(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
             <div>
               <label
                 htmlFor="email"
@@ -64,7 +81,7 @@ return (
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-white md:text-gray-700"
+                className="block text-sm font-medium text-white  md:text-gray-700"
               >
                 Password
               </label>
@@ -84,33 +101,18 @@ return (
 
             <div>
               <button
-                // onClick={() => navigate("/")}
+                // onClick={() => navigate("/login")}
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                Sign in
+                Register
               </button>
             </div>
           </form>
-          <div className="text-right mt-2">
-            <p
-              className="text-blue-500  mt-2"
-              onClick={() => navigate("/register")}
-            >
-              Create account here
-              <span className="text-red-500 font-bold text-[15px] ml-2 cursor-pointer align-right">
-                Sign Up
-              </span>
-            </p>
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-
-export default Login
-
-
-
+export default SignUp;
