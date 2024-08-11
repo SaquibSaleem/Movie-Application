@@ -1,38 +1,34 @@
 import React, { useState } from 'react'
-import logo from './../assets/Images/logo.png'
+import logo from '../../assets/Images/logo.png'
 import { HiHome,
     HiMagnifyingGlass,
     HiStar,
     HiPlayCircle,
     HiTv } from "react-icons/hi2";
 import { HiPlus,HiDotsVertical } from "react-icons/hi";
-import HeaderItem from './HeaderItem';
+import HeaderItem from '../HeaderItem';
 function Header() {
     const [toggle,setToggle]=useState(false);
     const menu=[
         {
-            name:'HOME',
+            id: 1,
+            name:'Home',
             icon:HiHome
         },
         {
-            name:'SEARCH',
+            id: 2,
+            name:'About Us',
             icon:HiMagnifyingGlass
         },
         {
-            name:'WATCH LIST',
+            id: 3,
+            name:'Movies List',
             icon:HiPlus
         },
         {
-            name:'ORIGINALS',
+            id: 4,
+            name:'Contact Us',
             icon:HiStar
-        },
-        {
-            name:'MOVIES',
-            icon:HiPlayCircle
-        },
-        {
-            name:'SERIES',
-            icon:HiTv
         }
     ]
   return (
@@ -62,7 +58,9 @@ function Header() {
         </div>
         <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
         className='w-[40px] rounded-full'/>
+        
     </div>
+    
   )
 }
 
