@@ -31,7 +31,7 @@ const AboutUs = () => {
         <p className="text-md mb-4">
           We are constantly working to improve our application and provide new features. Join our community of movie lovers and be a part of our journey!
         </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+        <button className="bg-white-600 hover:bg-zinc-950 text-black hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
           Get Started
         </button>
       </div>
