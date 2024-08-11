@@ -28,11 +28,7 @@ const lists = [
 ];
 
 const Footer = () => {
-<<<<<<< HEAD
-  const footerLine = "64 st james boulevard hoswick ,<br/> ze2 7zj";
-=======
   const footerLine = "BANO QABIL PROJECT BY \n1- Talha Shahzad \n2- Muhib Sami \n3- Saquib Saleem";
->>>>>>> main
 
   return (
     <div className="bg-[#14143c] text-white py-5">
