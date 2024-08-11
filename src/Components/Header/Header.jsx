@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import logo from '../../assets/Images/logo.png'
-import { HiHome,
-    HiMagnifyingGlass,
-    HiStar,
-    HiPlayCircle,
-    HiTv } from "react-icons/hi2";
-import { HiPlus,HiDotsVertical } from "react-icons/hi";
+import { HiHome} from "react-icons/hi2";
+import { FaInfoCircle,FaUser } from "react-icons/fa";
+import { MdOutlinePlaylistAdd } from "react-icons/md";
+import {HiDotsVertical } from "react-icons/hi";
 import HeaderItem from '../HeaderItem';
 function Header() {
     const [toggle,setToggle]=useState(false);
@@ -18,17 +16,17 @@ function Header() {
         {
             id: 2,
             name:'About Us',
-            icon:HiMagnifyingGlass
+            icon:FaInfoCircle
         },
         {
             id: 3,
             name:'Movies List',
-            icon:HiPlus
+            icon:MdOutlinePlaylistAdd
         },
         {
             id: 4,
             name:'Contact Us',
-            icon:HiStar
+            icon:FaUser
         }
     ]
   return (
