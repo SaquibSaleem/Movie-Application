@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function Login() {
     const [isLogin, setIsLogin] = useState(true);
   return (
-    <div className='container'>
+    <div className='container_login'>
         <div className='form-container'>
             <div className='form-toggle'>
                 <button className={isLogin ? 'active' : ""} onClick={() => setIsLogin
