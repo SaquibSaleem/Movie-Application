@@ -1,7 +1,10 @@
 import React from 'react'
 import './App.css'
 import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
 import { Home } from './Components/Home/Home'
+import Login from './Components/Login/Login'
+import Sigup from './Components/Login/Signup'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export const App = () => {
@@ -11,12 +14,11 @@ export const App = () => {
         <Header/>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Uncomment these routes as needed */}
-          {/* <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="*" element={<NotFound />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Sigup/>} />
+          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
-        {/* <Footer /> */}
+        <Footer/>
       </Router>
     </>
   );
