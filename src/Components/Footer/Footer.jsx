@@ -23,12 +23,14 @@ const lists = [
   },
   {
     label: "Help",
-    headings: ["News", "Service", "Our policy", "Custmer care", "Faq’s"],
+    headings: ["News", "Service", "Our policy", "Customer care", "FAQs"],
   },
 ];
 
 const Footer = () => {
-  const footerLine = "64 st james boulevard hoswick ,<br/> ze2 7zj";
+  // Here you can decide which footerLine to keep. I've included both, but you can comment out the one you don't need.
+  // const footerLine = "64 st james boulevard hoswick ,<br/> ze2 7zj";
+  const footerLine = "BANO QABIL PROJECT BY \n1- Talha Shahzad \n2- Muhib Sami \n3- Saquib Saleem";
 
   return (
     <div className="bg-[#14143c] text-white py-5">
@@ -37,10 +39,10 @@ const Footer = () => {
           <img src="./logo.png" className="h-30 w-62" alt="logo" />
           <p
             className="text-center"
-            dangerouslySetInnerHTML={{ __html: footerLine }}
+            dangerouslySetInnerHTML={{ __html: footerLine.replace(/\n/g, "<br/>") }}
           />
         </div>
-        <div className="col-span-1 md:col-span-3  text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-0">
+        <div className="col-span-1 md:col-span-3 text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4 md:px-0">
           {lists.map((list, index) => (
             <div key={index}>
               <h3 className="font-sans text-lg font-semibold text-white mb-2">
