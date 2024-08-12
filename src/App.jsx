@@ -3,27 +3,32 @@ import './App.css'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import { Home } from './Components/Home/Home'
-import About  from './Components/About/AboutUs'
-import Contact from './Components/Contact/ContactUs'
 import MovieList from './Components/MoiveList/MoviesList'
 import Login from './Components/Login/Login'
 import Register from './Components/Login/SignUp'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PrivateRoute from './Api/PrivateRoute';
+import Layout from './Layout';
+import AboutUs from './Components/About/AboutUs'
+import ContactUs from './Components/Contact/ContactUs'
 
 export const App = () => {
   return (
     <>
-      <Router>
-        <Header/>
+     <Router>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/movielist" element={<MovieList />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
+              <Route path="about" element={<AboutUs />} />
+              <Route path="contact" element={<ContactUs />} />
+              <Route path="movielist" element={<MovieList />} />
+            </Route>
+          </Route>
         </Routes>
-        <Footer/>
       </Router>
     </>
   );

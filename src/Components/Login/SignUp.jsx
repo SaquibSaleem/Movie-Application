@@ -16,7 +16,7 @@ const SignUp = () => {
       try {
         console.log(formData, "formData");
         const response = await HitApi("signup", "POST", formData);
-        response.status === true ? navigate("/login") : null;
+        response.status === true ? navigate("/Login") : null;
         console.log(response, "hehehehehe");
       } catch (error) {
         console.log(error);

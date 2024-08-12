@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "e501179c-a5a0-46c9-bd80-a07eceafbbcb",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19398555",
+		"_collection_link": "https://grey-comet-310199.postman.co/workspace/My-Workspace~f6caf734-b0ba-4dfd-8599-f1845bb6fc98/collection/19398555-e501179c-a5a0-46c9-bd80-a07eceafbbcb?action=share&source=collection_link&creator=19398555"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"qazi@email.com\",\n    \"password\":\"qazi12345\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"hamza\",\n    \"email\":\"hamza@email.com\",\n    \"password\":\"hamza12345\"    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/is-auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiUWF6aSIsImVtYWlsIjoicWF6aUBlbWFpbC5jb20iLCJwYXNzd29yZCI6InFhemkxMjM0NSJ9LCJpYXQiOjE2OTUzNjA0MjZ9.4zs0rs61P7lHPfo0b6RTn_a8WboAaEazYEappVGLJ4c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/is-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"is-auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

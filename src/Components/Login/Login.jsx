@@ -19,7 +19,9 @@ const Login = () => {
         const response = await HitApi("login", "POST", formData);
         if (response.status === true) {
           localStorage.setItem("token", response.data.token);
-          navigate("/");
+          navigate("/home");
+        } else{
+          alert('Incorrect email password')
         }
       } catch (error) {
         alert("incorrect email or password");

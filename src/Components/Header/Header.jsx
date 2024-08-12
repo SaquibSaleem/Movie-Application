@@ -65,10 +65,9 @@ function Header() {
             </div> 
         </div>
         </div>
-        <Link to="/"> 
+        <Link to="/login"> 
             <img src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745" className='w-[40px] rounded-full' />
         </Link>
-        
     </div>
     
   )
